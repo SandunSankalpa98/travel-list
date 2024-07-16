@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Item from "./Item";
 
-export default function PackingList({items, onDeleteItem, onToggleItem}) {
+export default function PackingList({items, onDeleteItem, onToggleItem, onClearList}) {
     const [sortBy, setSortBy] = useState("input")
 
     let sortedItems;
@@ -34,7 +34,10 @@ export default function PackingList({items, onDeleteItem, onToggleItem}) {
                 <option value="description">Sort by description</option>
                 <option value="packed">Sort by packed status</option>
             </select>
+            <button onClick={onClearList}>Clear List</button>
         </div>
+
+        
       </div>
 
       
@@ -50,4 +53,5 @@ PackingList.propTypes = {
     ).isRequired,
     onDeleteItem: PropTypes.func.isRequired,
     onToggleItem: PropTypes.func.isRequired,
+    onClearList: PropTypes.func.isRequired,
 };
