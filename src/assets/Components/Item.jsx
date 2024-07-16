@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Item({ item, onDeleteItem }) {
+export default function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     <li>
       <input
@@ -25,4 +25,5 @@ Item.propTypes = {
     packed: PropTypes.bool.isRequired,
   }).isRequired,
   onDeleteItem: PropTypes.func.isRequired,
+  onToggleItem: PropTypes.func.isRequired,
 };

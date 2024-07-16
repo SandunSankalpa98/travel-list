@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Item from "./Item";
 
-export default function PackingList({items, onDeleteItem}) {
+export default function PackingList({items, onDeleteItem, onToggleItem}) {
     return (
       <div className="list">
         <ul>
@@ -11,6 +11,7 @@ export default function PackingList({items, onDeleteItem}) {
                 item={item}
                 key={item.id}
                 onDeleteItem={onDeleteItem}
+                onToggleItem={onToggleItem}
             />
             ))}
         </ul>
@@ -26,4 +27,5 @@ PackingList.propTypes = {
         })
     ).isRequired,
     onDeleteItem: PropTypes.func.isRequired,
+    onToggleItem: PropTypes.func.isRequired,
 };
